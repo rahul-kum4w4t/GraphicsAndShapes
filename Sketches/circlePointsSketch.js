@@ -1,6 +1,13 @@
-let totalPoints = 100;
-let mul = 2;
+let mul = getRandIntInRangeIncBounds(2,9);
+let totalPoints = 50 * mul;
 let circleRadius;
+
+function getRandIntInRangeIncBounds(min, max) {
+    if (max < min) {
+        [max, min] = [min, max];
+    }
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function preload() {
 
@@ -9,7 +16,6 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    background(0);
 }
 
 function draw() {
@@ -18,6 +24,7 @@ function draw() {
 
 function drawFigure() {
 
+    background(0);
     let peripheralVectors = [];
 
     let part = 2 * Math.PI / totalPoints;
