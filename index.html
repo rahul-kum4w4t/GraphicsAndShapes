@@ -10,12 +10,19 @@
     body {
       padding: 0px;
       margin: 0px;
+      overflow: hidden;
     }
   </style>
 </head>
 
 <body>
-  <script src="Sketches/circlePointsSketch.js"></script>
+  <!--<script src="Sketches/circlePointsSketch.js"></script>-->
+  <!--<script src="Sketches/LiquidDiffusion/drawLiquidDiffusion.js"></script>-->
+  <script type="module">
+    import { setup, draw } from "./Sketches/Maze/drawMaze.js";
+    window.setup = setup;
+    window.draw = draw;
+  </script>
 </body>
 
 </html>
