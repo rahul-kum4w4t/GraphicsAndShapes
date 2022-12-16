@@ -1,5 +1,5 @@
-import { numbers } from "../../node_modules/es-utilities/index.js";
-let mul = numbers.getRandIntInRangeIncBounds(2, 9);
+import { getRandIntInRangeIncBounds } from "../../lib/numbers.js";
+let mul = getRandIntInRangeIncBounds(2, 9);
 
 let totalPoints = 50 * mul;
 let circleRadius;

@@ -1,6 +1,5 @@
 import Cell from "./Cell.js";
-import { numbers } from "../../node_modules/es-utilities/index.js";
-const getRandIntInRangeExcUpBound = numbers.getRandIntInRangeExcUpBound;
+import { getRandIntInRangeExcUpBound } from "../../lib/numbers.js";
 
 export default class MazeBoard {
     constructor(rows, cols, cellWidth, options = {

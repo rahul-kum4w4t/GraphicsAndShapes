@@ -2,10 +2,10 @@
   "name": "GraphicsAndShapes",
   "version": "1.0.2",
   "description": "",
-  "main": "p5Shapes.js",
+  "main": "index.html",
   "type": "module",
   "dependencies": {
-    "es-utilities": "^1.0.3"
+    "express": "^4.18.2"
   },
   "devDependencies": {},
   "scripts": {

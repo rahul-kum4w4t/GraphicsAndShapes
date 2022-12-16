@@ -1,5 +1,5 @@
-import { numbers, combinatorics as $comb } from "../../node_modules/es-utilities/index.js";
-const getRandIntInRangeExcUpBound = numbers.getRandIntInRangeExcUpBound;
+import { getRandIntInRangeExcUpBound } from "../../lib/numbers.js";
+import { $comb } from "../../lib/combinatorics.js";
 
 const randMoves = $comb.permutations([0, 1, 2, 3], 4);
 const COUNTER_INDICES = { 0: 2, 1: 3, 2: 0, 3: 1 };

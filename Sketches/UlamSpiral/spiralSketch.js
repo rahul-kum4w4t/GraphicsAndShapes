@@ -1,6 +1,5 @@
-import { arrayPatterns, numbers } from "../../node_modules/es-utilities/index.js";
-const spiralIndexGenerator = arrayPatterns.spiralIndexGenerator;
-const primeSequenceGenerator = numbers.primeSequenceGenerator;
+import {spiralIndexGenerator} from "../../lib/arrayPatterns.js";
+import {primeSequenceGenerator} from "../../lib/numbers.js";
 
 let spiralGen;
 let primes;
