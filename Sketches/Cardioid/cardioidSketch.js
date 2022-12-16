@@ -1,16 +1,10 @@
-let mul = getRandIntInRangeIncBounds(2,9);
+import { numbers } from "../../node_modules/es-utilities/index.js";
+let mul = numbers.getRandIntInRangeIncBounds(2, 9);
+
 let totalPoints = 50 * mul;
 let circleRadius;
 
-function getRandIntInRangeIncBounds(min, max) {
-    if (max < min) {
-        [max, min] = [min, max];
-    }
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 function preload() {
-
     circleRadius = (windowWidth > windowHeight ? windowHeight / 2 : windowWidth / 2) - 50;
 }
 
@@ -48,4 +42,11 @@ function drawFigure() {
     noFill();
     translate(-windowWidth / 2, -windowHeight / 2);
     circle(windowWidth / 2, windowHeight / 2, circleRadius * 2);
+    noLoop();
 }
+
+export {
+    preload,
+    draw,
+    setup
+};
