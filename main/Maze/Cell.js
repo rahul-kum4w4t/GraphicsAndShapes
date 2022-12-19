@@ -1,16 +1,14 @@
 import { getRandIntInRangeExcUpBound } from "../../lib/numbers.js";
 import { $comb } from "../../lib/combinatorics.js";
+import SquareCell from "../Common/SquareCell.js";
 
 const randMoves = $comb.permutations([0, 1, 2, 3], 4);
 const COUNTER_INDICES = { 0: 2, 1: 3, 2: 0, 3: 1 };
 
-export default class Cell {
-    constructor(row, col, cellWidth) {
-
+export default class Cell extends SquareCell {
+    constructor(row, col, width) {
+        super(row, col, width);
         Object.defineProperties(this, {
-            row: { value: row },
-            col: { value: col },
-            cellWidth: { value: cellWidth },
             visited: { value: false, writable: true },
             isCurrent: { value: false, writable: true },
             walls: { value: Object.seal(new Array(4).fill(true)) },
@@ -64,24 +62,22 @@ export default class Cell {
     }
 
     draw() {
-        let x = this.col * this.cellWidth;
-        let y = this.row * this.cellWidth;
 
         stroke(255);
         //strokeWeight(2);
-        if (this.walls[0]) line(x, y, x + this.cellWidth, y);
-        if (this.walls[3]) line(x, y, x, y + this.cellWidth);
-        if (this.walls[1]) line(x + this.cellWidth, y, x + this.cellWidth, y + this.cellWidth);
-        if (this.walls[2]) line(x, y + this.cellWidth, x + this.cellWidth, y + this.cellWidth);
+        if (this.walls[0]) line(this.posX, this.posY, this.posX + this.width, this.posY);
+        if (this.walls[3]) line(this.posX, this.posY, this.posX, this.posY + this.width);
+        if (this.walls[1]) line(this.posX + this.width, this.posY, this.posX + this.width, this.posY + this.width);
+        if (this.walls[2]) line(this.posX, this.posY + this.width, this.posX + this.width, this.posY + this.width);
 
         if (this.isCurrent) {
             noStroke();
             fill(0, 150, 0);
-            rect(x, y, this.cellWidth, this.cellWidth);
+            rect(this.posX, this.posY, this.width, this.width);
         } else if (this.visited) {
             noStroke();
             fill(50);
-            rect(x, y, this.cellWidth, this.cellWidth);
+            rect(this.posX, this.posY, this.width, this.width);
         }
     }
 }

@@ -1,18 +1,16 @@
 import Cell from "./Cell.js";
 import { getRandIntInRangeExcUpBound } from "../../lib/numbers.js";
+import Board from "../Common/Board.js";
 
-export default class MazeBoard {
+export default class MazeBoard extends Board {
     constructor(rows, cols, cellWidth, options = {
         startR: 0,
         startC: 0,
         seedRandom: false
     }) {
 
+        super(rows, cols, cellWidth, cellWidth);
         Object.defineProperties(this, {
-            cols: { value: cols },
-            rows: { value: rows },
-            cellWidth: { value: cellWidth },
-            grid: { value: [] },
             visitedCount: { value: 0, writable: true },
             visitStack: { value: [], writable: true },
             currCell: { value: null, writable: true }
@@ -24,7 +22,7 @@ export default class MazeBoard {
     reset({ startR = 0, startC = 0, seedRandom = false } = {}) {
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
-                this.grid.push(new Cell(i, j, this.cellWidth));
+                this.setCellValue(i, j, new Cell(i, j, this.cellWidth));
             }
         }
 

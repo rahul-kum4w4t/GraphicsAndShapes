@@ -24,9 +24,13 @@
   </script>-->
   <!--<script src="Sketches/LiquidDiffusion/drawLiquidDiffusion.js"></script>-->
   <script type="module">
-    import { setup, draw } from "./Sketches/Maze/drawMaze.js";
+    //import { setup, draw } from "./main/Maze/drawMaze.js";
+    //import { setup, draw, keyPressed } from "./main/SnakeGame/sketch.js";
+    import { setup, draw, mouseClicked } from "./main/MineSweeper/sketch.js";
     window.setup = setup;
     window.draw = draw;
+    //window.keyPressed = keyPressed;
+    window.mouseClicked = mouseClicked;
   </script>
   <!--<script type="module">
     import { setup, draw } from "./Sketches/UlamSpiral/spiralSketch.js";
