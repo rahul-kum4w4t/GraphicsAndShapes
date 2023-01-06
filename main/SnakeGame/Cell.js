@@ -15,9 +15,7 @@ export default class Cell extends SquareCell {
     draw() {
         if (this.isSnake || this.isFood) {
             fill(255);
-        } else {
-            fill(0);
+            rect(this.posX, this.posY, this.width, this.width);
         }
-        rect(this.posX, this.posY, this.width, this.width);
     }
 }

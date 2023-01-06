@@ -57,11 +57,6 @@ export default class SnakeBoard extends Board {
             count++;
         }
         cell.isFood = cell.isSnake ? false : true;
-    }
-
-    draw() {
-        for (let cell of this.grid) {
-            cell.draw();
-        }
+        this.food = cell;
     }
 }

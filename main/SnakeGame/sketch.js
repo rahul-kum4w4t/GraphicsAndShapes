@@ -20,8 +20,8 @@ function setup() {
 
 function draw() {
     background(0);
-    debugger;
-    snakeBoard.draw();
+    snakeBoard.food.draw();
+    snake.draw();
     snake.move();
 }
 

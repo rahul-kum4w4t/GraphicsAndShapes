@@ -33,6 +33,7 @@ export default class Snake {
         if (this.length == this.board.length) {
             noLoop();
             alert("Congtarulations!!! You Win!");
+            return;
         }
 
         let nextCell;
@@ -54,7 +55,6 @@ export default class Snake {
             noLoop();
             alert("You Loose!");
         } else {
-
             this.head.front = nextCell;
             nextCell.back = this.head;
             nextCell.front = null;
@@ -87,6 +87,14 @@ export default class Snake {
                 this.updateDirection(DIR.DOWN);
             }
             this.canTurn = false;
+        }
+    }
+
+    draw() {
+        let cell = this.head;
+        while (cell) {
+            cell.draw();
+            cell = cell.back;
         }
     }
 }

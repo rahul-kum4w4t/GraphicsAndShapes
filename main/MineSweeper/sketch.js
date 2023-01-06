@@ -1,7 +1,7 @@
 import MineBoard from "./MineBoard.js";
 
 let mineBoard;
-let cellWidth = 80;
+let cellWidth = 60;
 let rows;
 let cols;
 

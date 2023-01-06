@@ -16,27 +16,27 @@
 </head>
 
 <body>
-  <!--<script type="module">
-    import { setup, draw, preload } from "./Sketches/Cardioid/cardioidSketch.js";
-    window.setup = setup;
-    window.draw = draw;
-    window.preload = preload;
-  </script>-->
+  <!--<div style="display:flex;">
+    <div id="original" style="width:600px;height:400px;"></div>
+    <div id="modified" style="width:600px;height:400px;"></div>
+  </div>-->
+  <!--<script src="test.js"></script>-->
   <!--<script src="Sketches/LiquidDiffusion/drawLiquidDiffusion.js"></script>-->
   <script type="module">
     //import { setup, draw } from "./main/Maze/drawMaze.js";
     //import { setup, draw, keyPressed } from "./main/SnakeGame/sketch.js";
-    import { setup, draw, mouseClicked } from "./main/MineSweeper/sketch.js";
-    window.setup = setup;
-    window.draw = draw;
-    //window.keyPressed = keyPressed;
-    window.mouseClicked = mouseClicked;
+    //import { setup, draw, mouseClicked } from "./main/MineSweeper/sketch.js";
+    //import { setup, draw, preload } from "./Sketches/Cardioid/cardioidSketch.js";
+    //import { setup, draw } from "./Sketches/UlamSpiral/spiralSketch.js";2
+    //import * as engine from "./main/QuadTree/sketchQuadTree.js";
+    //import * as engine from "./main/AttractionForces/attractionForcesSketch.js";
+    //import * as engine from "./main/TestPlayground/sketch.js";
+    import * as engine from "./main/InverseKinemetics/armSketch.js";
+    for (let [key, value] of Object.entries(engine)) {
+      //console.log(key, value);
+      window[key] = value;
+    }
   </script>
-  <!--<script type="module">
-    import { setup, draw } from "./Sketches/UlamSpiral/spiralSketch.js";
-    window.setup = setup;
-    window.draw = draw;
-  </script>-->
 </body>
 
 </html>
